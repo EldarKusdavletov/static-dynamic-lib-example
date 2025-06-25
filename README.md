@@ -2,7 +2,7 @@
 
 `cd build`
 
-`cmake ..`
+`cmake ..` or `cmake .. -DSTATIC_LIBRARY=OFF`
 
 `make`
 

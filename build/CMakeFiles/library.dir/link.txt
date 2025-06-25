@@ -1,0 +1,1 @@
+/usr/bin/c++ -dynamiclib -Wl,-headerpad_max_install_names -o liblibrary.dylib -install_name @rpath/liblibrary.dylib "CMakeFiles/library.dir/dynamic-lib/dynamic-lib.cpp.o"

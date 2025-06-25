@@ -1,8 +1,6 @@
-void print_static();
-void print_dynamic();
+void print();
 
 int main() {
-	print_static();
-	print_dynamic();
+	print();
 	return 0;
 }

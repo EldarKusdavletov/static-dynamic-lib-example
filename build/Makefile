@@ -117,32 +117,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named static_library
-
-# Build rule for target.
-static_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 static_library
-.PHONY : static_library
-
-# fast build rule for target.
-static_library/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/static_library.dir/build.make CMakeFiles/static_library.dir/build
-.PHONY : static_library/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_library
-
-# Build rule for target.
-dynamic_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dynamic_library
-.PHONY : dynamic_library
-
-# fast build rule for target.
-dynamic_library/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamic_library.dir/build.make CMakeFiles/dynamic_library.dir/build
-.PHONY : dynamic_library/fast
-
-#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -155,29 +129,42 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-dynamic-lib.o: dynamic-lib.cpp.o
-.PHONY : dynamic-lib.o
+#=============================================================================
+# Target rules for targets named library
+
+# Build rule for target.
+library: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library
+.PHONY : library
+
+# fast build rule for target.
+library/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/build
+.PHONY : library/fast
+
+dynamic-lib/dynamic-lib.o: dynamic-lib/dynamic-lib.cpp.o
+.PHONY : dynamic-lib/dynamic-lib.o
 
 # target to build an object file
-dynamic-lib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamic_library.dir/build.make CMakeFiles/dynamic_library.dir/dynamic-lib.cpp.o
-.PHONY : dynamic-lib.cpp.o
+dynamic-lib/dynamic-lib.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/dynamic-lib/dynamic-lib.cpp.o
+.PHONY : dynamic-lib/dynamic-lib.cpp.o
 
-dynamic-lib.i: dynamic-lib.cpp.i
-.PHONY : dynamic-lib.i
+dynamic-lib/dynamic-lib.i: dynamic-lib/dynamic-lib.cpp.i
+.PHONY : dynamic-lib/dynamic-lib.i
 
 # target to preprocess a source file
-dynamic-lib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamic_library.dir/build.make CMakeFiles/dynamic_library.dir/dynamic-lib.cpp.i
-.PHONY : dynamic-lib.cpp.i
+dynamic-lib/dynamic-lib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/dynamic-lib/dynamic-lib.cpp.i
+.PHONY : dynamic-lib/dynamic-lib.cpp.i
 
-dynamic-lib.s: dynamic-lib.cpp.s
-.PHONY : dynamic-lib.s
+dynamic-lib/dynamic-lib.s: dynamic-lib/dynamic-lib.cpp.s
+.PHONY : dynamic-lib/dynamic-lib.s
 
 # target to generate assembly for a file
-dynamic-lib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/dynamic_library.dir/build.make CMakeFiles/dynamic_library.dir/dynamic-lib.cpp.s
-.PHONY : dynamic-lib.cpp.s
+dynamic-lib/dynamic-lib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/dynamic-lib/dynamic-lib.cpp.s
+.PHONY : dynamic-lib/dynamic-lib.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -203,30 +190,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-static-lib.o: static-lib.cpp.o
-.PHONY : static-lib.o
-
-# target to build an object file
-static-lib.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/static_library.dir/build.make CMakeFiles/static_library.dir/static-lib.cpp.o
-.PHONY : static-lib.cpp.o
-
-static-lib.i: static-lib.cpp.i
-.PHONY : static-lib.i
-
-# target to preprocess a source file
-static-lib.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/static_library.dir/build.make CMakeFiles/static_library.dir/static-lib.cpp.i
-.PHONY : static-lib.cpp.i
-
-static-lib.s: static-lib.cpp.s
-.PHONY : static-lib.s
-
-# target to generate assembly for a file
-static-lib.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/static_library.dir/build.make CMakeFiles/static_library.dir/static-lib.cpp.s
-.PHONY : static-lib.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -235,18 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... dynamic_library"
+	@echo "... library"
 	@echo "... main"
-	@echo "... static_library"
-	@echo "... dynamic-lib.o"
-	@echo "... dynamic-lib.i"
-	@echo "... dynamic-lib.s"
+	@echo "... dynamic-lib/dynamic-lib.o"
+	@echo "... dynamic-lib/dynamic-lib.i"
+	@echo "... dynamic-lib/dynamic-lib.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... static-lib.o"
-	@echo "... static-lib.i"
-	@echo "... static-lib.s"
 .PHONY : help
 
 
