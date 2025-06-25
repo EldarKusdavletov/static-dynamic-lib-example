@@ -1,0 +1,5 @@
+/Users/kusdavletov/Desktop/static-dynamic-lib-example/build/CMakeFiles/static_library.dir
+/Users/kusdavletov/Desktop/static-dynamic-lib-example/build/CMakeFiles/dynamic_library.dir
+/Users/kusdavletov/Desktop/static-dynamic-lib-example/build/CMakeFiles/main.dir
+/Users/kusdavletov/Desktop/static-dynamic-lib-example/build/CMakeFiles/edit_cache.dir
+/Users/kusdavletov/Desktop/static-dynamic-lib-example/build/CMakeFiles/rebuild_cache.dir

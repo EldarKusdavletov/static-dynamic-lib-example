@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/main.dir/main.cpp.o -o main  -Wl,-rpath,/Users/kusdavletov/Desktop/static-dynamic-lib-example/build libstatic_library.a libdynamic_library.dylib
